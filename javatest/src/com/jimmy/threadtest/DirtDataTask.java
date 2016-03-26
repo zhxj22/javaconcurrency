@@ -32,7 +32,7 @@ public class DirtDataTask {
 		private int a = 1;
 		//when ahve the synchronized key word, the thread running 
 		//this code would pending till another therad finish this code
-		public void operate(){
+		synchronized public void operate(){
 			a --;
 			System.out.println("I am thread: " + Thread.currentThread());
 			try {
