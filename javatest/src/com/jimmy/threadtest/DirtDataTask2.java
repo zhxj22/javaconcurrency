@@ -30,10 +30,11 @@ public class DirtDataTask2 {
 	}
 	public static class Data{
 		private int a = 1;
+		Object object = new Object();
 		//when ahve the synchronized key word, the thread running 
 		//this code would pending till another therad finish this code
 		public void operate(){
-			synchronized (this) {
+			synchronized (object) {
 				a --;
 				System.out.println("I am thread: " + Thread.currentThread());
 				try {
