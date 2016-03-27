@@ -28,7 +28,7 @@ public class SemaphoreTest {
 	public static class PrintQueue{
 		private Semaphore semaphore = null;
 		public PrintQueue(){
-			semaphore = new Semaphore(1);
+			semaphore = new Semaphore(1, true);
 		}
 		public void printJob(Object obj){
 			try {
