@@ -29,6 +29,7 @@ public class ReenterLockTest {
 	public static class PrintQueue{
 		private final ReentrantLock queLock = new ReentrantLock();
 		public void printJob(Object document){
+			//lock happen, and the critical secion is taken.
 			this.queLock.lock();
 			try 
 			{
