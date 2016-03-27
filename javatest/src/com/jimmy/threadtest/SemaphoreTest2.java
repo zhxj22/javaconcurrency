@@ -47,11 +47,10 @@ public class SemaphoreTest2 {
 		}
 		//the procedure to get a printer, as more than 1 thread can enter,
 		//so also need to be synchronized.
-		private int getFreePrinter() {
+		synchronized private int getFreePrinter() {
 			int ret = -1;
 			try{
 				//if no sync, error would happen
-				lockPrinters.lock();
 				for (int i=0; i<freePrinters.length; i++) {
 					if (freePrinters[i]){
 						ret=i;
@@ -62,7 +61,6 @@ public class SemaphoreTest2 {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				lockPrinters.unlock();
 			}
 			return ret;
 		}
